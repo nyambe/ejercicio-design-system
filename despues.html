@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Después</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="relative">
+        <div
+          class="absolute text-xs underline top-5 left-5 text-main dark:text-light-accent"
+        >
+          <a href="./">inicio </a>
+        </div>
+      </div>
+      <div :class="`${ oscuro ? 'dark' : ''}`">
+        <div
+          class="justify-center w-full mx-auto bg-light-accent text-dark-accent dark:bg-dark-accent dark:text-light-accent"
+        >
+          <div class="block w-full p-4 text-right">
+            <button @click="oscuro = !oscuro">
+              <span>{{oscuro ? 'día':'noche' }} </span>
+            </button>
+          </div>
+          <div id="TituloSeccion">{{titulo}}</div>
+          <div id="SubtituloSeccion">{{subtitulo}}</div>
+          <div class="grid px-10 py-2 bg-white md:grid-cols-5">
+            <div
+              :class="`${fondo}`"
+              v-for="fondo in fondos"
+              class="h-16"
+              :key="color"
+            >
+              {{fondo}}
+            </div>
+          </div>
+
+          <div id="Seccion" class="mx-auto">
+            <div v-for="ficha in fichas" :key="ficha" class="FichaGeneral">
+              <div class="ContenedorImagen">
+                <img :src="getUrl(ficha)" alt="" class="Imagen" />
+              </div>
+              <div class="FechaEvento bg-main">20 ENE 2021</div>
+              <div class="TituloEvento">
+                Título del evento - Título del evento - Título del evento
+              </div>
+              <div class="RecintoCiudadEvento">Recinto del evento, Ciudad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const app = {
+        name: "PruebasAdri",
+        data() {
+          return {
+            oscuro: false,
+            titulo: "Venta de entradas",
+            subtitulo: "Eventos",
+            fichas: 6,
+            sizes: [200, 350, 500, 450, 150, 300],
+            fondos: [
+              "bg-main",
+              "bg-dark-accent",
+              "bg-dark-shade",
+              "bg-light-accent",
+              "bg-light-shade",
+            ],
+          };
+        },
+        computed: {
+          random() {
+            const min = 0;
+            const max = 6;
+            return;
+          },
+        },
+        methods: {
+          getUrl(valor) {
+            const min = 0;
+            const max = 5;
+            const sizes = this.sizes;
+
+            const random = Math.floor(Math.random() * (max - min + 1) + min);
+            return `https://picsum.photos/${sizes[random]}/${sizes[valor - 1]}`;
+          },
+        },
+      };
+
+      const { createApp } = Vue;
+      createApp(app).mount("#app");
+    </script>
+  </body>
+</html>

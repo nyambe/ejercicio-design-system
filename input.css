@@ -1,3 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+/* #body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0px;
+  background-color: #f4f4f4;
+} */
+#TituloSeccion {
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 20px;
+}
+#SubtituloSeccion {
+  width: 100%;
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+}
+#Seccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0px 40px;
+}
+.FichaGeneral {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 550px;
+  padding: 10px;
+  margin: 20px 0px;
+  height: fit-content;
+  min-height: inherit;
+}
+.ContenedorImagen {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 400px;
+  overflow: hidden;
+}
+.Imagen {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  display: block;
+}
+.FechaEvento {
+  color: #fff;
+  padding: 5px 5px;
+  margin: 10px 0px;
+  font-weight: bold;
+  font-size: 14px;
+  height: fit-content;
+}
+.TituloEvento {
+  font-weight: bold;
+  height: fit-content;
+}
+.RecintoCiudadEvento {
+  font-size: 14px;
+  margin: 8px 0px;
+  height: fit-content;
+}
+
+@media (min-width: 576px) {
+  .FichaGeneral {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .FichaGeneral {
+    width: 33.333%;
+  }
+}
+@media (min-width: 992px) {
+  .FichaGeneral {
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  #Seccion {
+    max-width: 1600px;
+  }
+  .FichaGeneral {
+    padding: 15px;
+  }
+}
