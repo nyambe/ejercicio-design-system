@@ -1,20 +1,20 @@
-# Tailwind CSS básico
+# Ejercicio Design System,
 
-Una instalación básica para empezar a utilizar tailwindCSS
+Un ejercicio para ver la utilidad de tener un sistema de diseño
 
 ## Descripción
 
 Incluye servidor web, creato via vite. Necesitas tener nodejs instalado para poder ejecutar npm
 
-### Instalacion
+En este caso investigamos el uso de colores para facilitar la creación de webs distintas
 
-Ejemplo en el directorio /frontend (por ejemplo)
+### Instalacion
 
 ```console
 
 clone https://github.com/nyambe/ejercicio-design-system.git
 
-cd tailwindcss-basico
+cd ejercicio-design-system
 
 npm install
 
